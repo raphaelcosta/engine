@@ -15,7 +15,7 @@ module Admin
     def index
       @assets = ThemeAsset.all_grouped_by_folder(current_site, params[:all])
       @js_and_css_assets = (@assets[:javascripts] || []) + (@assets[:stylesheets] || [])
-      @media_assets = (@assets[:video] || []) + (@assets[:audio] || [])
+      @media_assets = (@assets[:videos] || []) + (@assets[:audios] || [])
       if request.xhr?
         @images = @assets[:images] || []
         render :action => 'images', :layout => false and return
