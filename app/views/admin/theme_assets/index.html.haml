@@ -42,10 +42,10 @@
   %ul.list.theme-assets
     = render :partial => 'asset', :collection => @assets[:fonts]
 
-- if @assets[:media]
+- if @media_assets.empty?
   %br
 
   %h3!= t('.media')
   %ul.list.theme-assets
-    = render :partial => 'asset', :collection => @assets[:media]
+    = render :partial => 'asset', :collection => @media_assets
 
